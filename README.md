@@ -20,6 +20,7 @@
 
 
 3. 需要准备生成缩略图所需模型API，模型推荐 gemini-3-pro-image-preview
+   
 
 
 ## 1 安装openclaw
@@ -37,7 +38,6 @@ curl -fsSL https://openclaw.ai/install.sh | bash
 ![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/4EZlweZ8e13BZqxA/img/531656d9-7679-44a7-9c3d-e54c25ccd53d.png)
 
 <img width="311" height="193" alt="image" src="https://github.com/user-attachments/assets/9316b9b6-4177-4e32-baa8-0016a3041a95" />
-
 
 
 ## 2 更新模型key配置
@@ -67,9 +67,19 @@ curl -fsSL https://openclaw.ai/install.sh | bash
 ![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/4EZlweZ8e13BZqxA/img/6729372c-71a2-4b1f-825e-9f1703cf0609.png)
 
 
-编辑配置文件，更新所需的配置值：
+编辑配置文件，更新所需的配置值。配置文件路径： ~/.openclaw/skills/Wechat-Artical/scripts/config.json 
 
-配置文件路径： ~/.openclaw/skills/Wechat-Artical/scripts/config.json 
+```json
+{
+  "IMAGE_API_BASE_URL": "https://xxx/v1",
+  "IMAGE_API_KEY": "sk-xxx",
+  "IMAGE_MODEL_NAME": "gemini-3-pro-image-preview",
+  "IMAGE_FALLBACK_MODEL_NAME": "gemini-2.0-flash-exp-image-generation",
+  "WECHAT_APPID": "xxx",
+  "WECHAT_APPSECRET": "xxx",
+  "WECHAT_AUTHOR": "xxx"
+}
+```
 
 其中：
 IMAGE_API_BASE_URL：生成图模型的baseUrl，需要与IMAGE_MODEL_NAME匹配
@@ -87,6 +97,7 @@ WECHAT_APPSECRET：要发布的微信公众号secret
 WECHAT_AUTHOR：要发布的微信公众号名称
 
 
+
 ## 4 通知openclaw安装这个skill
 
 本地openclaw gateway通过Chat聊天，输入如下内容让它安装这个skill，它会自动安装所需依赖。
@@ -95,17 +106,17 @@ WECHAT_AUTHOR：要发布的微信公众号名称
 帮我安装skill到本地，所需文件都在~/.openclaw/skills目录下
 ```
 
-![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/4EZlweZ8e13BZqxA/img/464e5901-b7f2-4586-bbbb-076dffb04cc5.png)
+<img width="1395" height="580" alt="image" src="https://github.com/user-attachments/assets/9b308cc8-f06a-4668-9d06-edfaacae1267" />
 
 ![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/4EZlweZ8e13BZqxA/img/efd1a610-e67a-4746-aa9e-0f371e9bced8.png)
 
 
-然后就可以通过Chat让它写公众号了。
+然后就可以通过Chat尝试让它写公众号了。
 
 ![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/4EZlweZ8e13BZqxA/img/f86a8c0d-f4e8-44df-a89a-fa9fb925de51.png)
 
 
-## 5 安装飞书插件
+## 5 安装飞书渠道
 
 openclaw 默认不内置飞书 Channel，需要额外安装插件，社区已经有小伙伴实现并开源 项目地址： [https://github.com/m1heng/clawdbot-feishu](https://github.com/m1heng/clawdbot-feishu) 
 

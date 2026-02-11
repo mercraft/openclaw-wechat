@@ -14,11 +14,11 @@ from typing import List, Union
 import aiohttp
 from PIL import Image, ImageDraw, ImageFont
 
-# API 配置
-BASE_URL = "https://ent2.zetatechs.com/v1"
-API_KEY = "sk-luFEGbQnbjIHN59DQU3ksaPwbjKxvtoY8l8vnBrRzuyvKzBy"
-MODEL_NAME = "gemini-3-pro-image-preview"
-FALLBACK_MODEL_NAME = "gemini-2.0-flash-exp-image-generation"
+# API 配置（从环境变量读取，如果未设置则使用默认值）
+BASE_URL = os.getenv("IMAGE_API_BASE_URL", "https://xxx.com/v1")
+API_KEY = os.getenv("IMAGE_API_KEY", "sk-xxx")
+MODEL_NAME = os.getenv("IMAGE_MODEL_NAME", "gemini-3-pro-image-preview")
+FALLBACK_MODEL_NAME = os.getenv("IMAGE_FALLBACK_MODEL_NAME", "gemini-2.0-flash-exp-image-generation")
 
 
 def create_cover_image(article_dir: str, cover_text: str = "") -> str:
@@ -356,3 +356,4 @@ if __name__ == "__main__":
     article_dir = sys.argv[1]
     result = create_cover_image(article_dir)
     print(result)
+

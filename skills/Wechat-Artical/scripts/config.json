@@ -1,0 +1,10 @@
+{
+  "IMAGE_API_BASE_URL": "https://ent2.zetatechs.com/v1",
+  "IMAGE_API_KEY": "sk-luFEGbQnbjIHN59DQU3ksaPwbjKxvtoY8l8vnBrRzuyvKzBy",
+  "IMAGE_MODEL_NAME": "gemini-3-pro-image-preview",
+  "IMAGE_FALLBACK_MODEL_NAME": "gemini-2.0-flash-exp-image-generation",
+  "WECHAT_APPID": "wxc3e581101fc9040f",
+  "WECHAT_APPSECRET": "0a207d6e45491f34bd69452457301114",
+  "WECHAT_AUTHOR": "AIGCLink"
+}
+
